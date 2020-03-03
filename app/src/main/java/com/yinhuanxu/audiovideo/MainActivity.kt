@@ -21,9 +21,19 @@ import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity() {
+    /**
+     * A native method that is implemented by the 'native-lib' native library,
+     * which is packaged with this application.
+     */
+    external fun stringFromJNI(): String
 
     companion object {
         const val TAG = "AVStudy"
+
+        // Used to load the 'native-lib' library on application startup.
+        init {
+            System.loadLibrary("native-lib")
+        }
     }
 
     lateinit var button: Button
@@ -135,13 +145,14 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun onButtonClick() {
-        Thread(Runnable {
-            try {
-                viewModel.deleteAudioTrack(this)
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }).start()
+        logI("onButtonClick ${stringFromJNI()}")
+//        Thread(Runnable {
+//            try {
+//                viewModel.deleteAudioTrack(this)
+//            } catch (e: Exception) {
+//                e.printStackTrace()
+//            }
+//        }).start()
     }
 
 }
