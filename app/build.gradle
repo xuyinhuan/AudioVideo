@@ -17,10 +17,22 @@ android {
 
         externalNativeBuild {
             cmake {
-                cppFlags ""
+                cppFlags "-frtti -fexceptions"
             }
         }
+
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
     }
+
+    sourceSets {
+        main {
+            jni.srcDirs = ['src/main/cpp/']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false

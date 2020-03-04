@@ -1,10 +1,15 @@
 #include <jni.h>
 #include <string>
 
+extern "C" {
+#include <libavcodec/avcodec.h>
+}
+
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_yinhuanxu_audiovideo_MainActivity_stringFromJNI(
-        JNIEnv* env,
+        JNIEnv *env,
         jobject /* this */) {
-    std::string hello = "Hello from C++";
-    return env->NewStringUTF(hello.c_str());
+    std::string hello = "Hello from C++ ";
+    std::string ffmpegConfig = avcodec_configuration();
+    return env->NewStringUTF(hello.append(ffmpegConfig).c_str());
 }
