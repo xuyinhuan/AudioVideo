@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AndroidMediaActivity" />
-        <activity android:name=".FFmpegActivity" />
+        <activity android:name=".ffmpeg.FFmpegActivity" />
+        <activity android:name=".ffmpeg.FFmpegInfoActivity" />
     </application>
 
 </manifest>
