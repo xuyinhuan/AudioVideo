@@ -6,7 +6,7 @@ extern "C" {
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_yinhuanxu_audiovideo_MainActivity_stringFromJNI(
+Java_com_yinhuanxu_audiovideo_FFmpegActivity_stringFromJNI(
         JNIEnv *env,
         jobject /* this */) {
     std::string hello = "Hello from C++ ";
