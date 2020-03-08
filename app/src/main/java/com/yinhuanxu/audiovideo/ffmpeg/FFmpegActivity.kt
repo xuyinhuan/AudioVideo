@@ -20,5 +20,10 @@ class FFmpegActivity : AppCompatActivity() {
             val intent = Intent(this, FFmpegInfoActivity::class.java)
             startActivity(intent)
         }
+
+        ffmpegPlay.setOnClickListener {
+            val intent = Intent(this, FFmpegPlayActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
