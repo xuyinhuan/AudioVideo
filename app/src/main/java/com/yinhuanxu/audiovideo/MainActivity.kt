@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.yinhuanxu.audiovideo.ffmpeg.FFmpegActivity
+import com.yinhuanxu.audiovideo.opengles.OpenGLESActivity
 import com.yinhuanxu.audiovideo.webrtc.CallActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import pub.devrel.easypermissions.EasyPermissions
@@ -45,6 +46,11 @@ class MainActivity : AppCompatActivity() {
 
         webrtc.setOnClickListener {
             val intent = Intent(this, CallActivity::class.java)
+            startActivity(intent)
+        }
+
+        openGLES.setOnClickListener {
+            val intent = Intent(this, OpenGLESActivity::class.java)
             startActivity(intent)
         }
     }

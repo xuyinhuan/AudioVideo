@@ -22,6 +22,7 @@
         <activity android:name=".ffmpeg.FFmpegPlayActivity" />
         <activity android:name=".webrtc.CallActivity" />
         <activity android:name=".webrtc.RoomActivity" />
+        <activity android:name=".opengles.OpenGLESActivity" />
     </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
